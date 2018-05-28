@@ -1,0 +1,31 @@
+<div>
+    <a href="https://pixabay.com/">
+            <img src="https://pixabay.com/static/img/public/leaderboard_b.png" alt="Pixabay">
+        </a>
+</div>
+<hr>
+<div class="input-group">
+    <input type="text" class="form-control" [(ngModel)] = "searchQuery" placeholder="Search for...">   
+    <span class="input-group-btn">
+      <button class="btn btn-default" (click) = "searchImages(searchQuery, 1)" type="button">Go!</button>
+    </span>
+  </div><!-- /input-group -->
+  <hr>
+  <nav aria-label="...">
+        <ul class="pager">
+          <li class="previous"> <a  href="#" (click)="DecrementPage($event)">Older<span aria-hidden="true">&larr;</span></a> </li>
+          <li class="next"><a  href="#" (click)="IncrementPage($event)">Newer <span aria-hidden="true">&rarr;</span></a></li>
+        
+        </ul>
+      </nav>
+
+  <md-grid-list cols="3" md-cols-gt-sm="4" 
+                md-cols-sm="2" md-cols="1" 
+                gutterSize="7px" 
+                md-row-height="fit"
+                rowHeight="200px">
+        <md-grid-tile *ngFor="let image of images" >
+                <img src="{{image.webformatURL }}" alt="">
+        </md-grid-tile>
+      </md-grid-list>
+

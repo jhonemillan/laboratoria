@@ -1,0 +1,32 @@
+<h2 class="page-header">Post your note</h2>
+
+<div class="row">
+  <form (ngSubmit) ="onBlogSubmit()" >
+    <div class="col-lg-12">
+      <div class="input-group"> 
+        <input type="text" [(ngModel)] = "description" name = "note" required="true" class="form-control" placeholder="Write your post">
+        <div class="input-group-btn">
+          <input type="submit" class="btn btn-success" value="Save"> 
+          
+        </div><!-- /btn-group -->
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+  </form>
+
+</div><!-- /.row -->
+<hr>
+<div class="row">
+    
+     <div class="panel-group">
+        <div class="panel panel-primary" *ngFor="let blog of blogsPosts">
+
+          <div class="panel-heading"><strong> Posted by {{blog.username}} - {{blog.creationDate | date: 'medium' }}</strong> <div class="pull-right">          
+            <button class="btn btn-danger btn-xs" data-title="Delete" (click)="onDeleteBlog(blog._id)" *ngIf="username === blog.username">
+            <span class="glyphicon glyphicon-trash"></span>
+            </button>          
+          </div></div>
+          <div class="panel-body">{{blog.description}}</div>
+         
+
+    
+</div>

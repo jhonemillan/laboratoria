@@ -1,0 +1,75 @@
+
+<!-- Custom Success/Error Message -->
+<div class="row show-hide-message">
+  <div [ngClass]="messageClass">
+    {{ message }}
+  </div>
+</div>
+        
+<form [formGroup] = "form" class="form-horizontal" (submit) ="onRegisterSubmit()" >
+    <!-- Form Name -->
+    <legend>Register Here</legend>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Username</label>  
+      <div class="col-md-4" [ngClass]= "{ 'has-error' : (form.controls.username.errors), 'has-success': (!form.controls.username.errors)}">
+      <input id="textinput" name="username" placeholder="Insert your username" class="form-control input-md" type="text" formControlName="username">
+      <ul  class="help-block">
+        <li *ngIf="form.controls['username'].hasError('required') && form.controls['username'].touched">This field is required</li>
+        <li *ngIf="form.controls['username'].hasError('minlength') && form.controls['username'].touched">Minimum 3 characters</li>
+        <li *ngIf="form.controls['username'].hasError('maxlength') && form.controls['username'].touched">Minimum 5 characters</li>        
+      </ul>
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Email</label>  
+      <div class="col-md-4" [ngClass]= "{ 'has-error' : (form.controls.email.errors), 'has-success': (!form.controls.email.errors)}">
+      <input class="form-control" name="email"
+                    type="text"                
+                    placeholder="Insert your email"
+                    formControlName="email"
+                    />
+      <ul  class="help-block">
+        <li *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched">This field is required</li>
+        <li *ngIf="form.controls['email'].hasError('email') && form.controls['email'].touched">Invalid Email</li>
+        
+      </ul>
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Password</label>  
+      <div class="col-md-4" [ngClass]= "{ 'has-error' : (form.controls.password.errors), 'has-success': (!form.controls.password.errors)}">
+      <input id="textinput" name="password" formControlName="password" placeholder="Insert your Password" class="form-control input-md" type="password">
+      <ul  class="help-block">
+        <li *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched">This field is required</li>
+        <li *ngIf="form.controls['password'].hasError('minlength') && form.controls['password'].touched">Minimum 6 characters</li>
+        <li *ngIf="form.controls['password'].hasError('maxlength') && form.controls['password'].touched">Minimum 10 characters</li>        
+      </ul>
+      </div>
+    </div>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Confirm Password</label>  
+      <div class="col-md-4" [ngClass]= "{ 'has-error' : (form.controls.confirm.errors), 'has-success': (!form.controls.confirm.errors)}">
+      <input id="textinput" name="confirm" formControlName="confirm" placeholder="Confirm your Password" class="form-control input-md" type="password">
+      <ul  class="help-block">
+        <li *ngIf="form.controls['confirm'].hasError('required') && form.controls['confirm'].touched">This field is required</li>
+        <li *ngIf="form.controls['confirm'].hasError('minlength') && form.controls['confirm'].touched">Minimum 6 characters</li>
+        <li *ngIf="form.controls['confirm'].hasError('maxlength') && form.controls['confirm'].touched">Minimum 10 characters</li>
+        <li *ngIf="form.hasError('matchingPasswords') && form.controls['confirm'].touched">The password does not match</li>        
+      </ul>  
+      </div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group">
+      <input type="submit" class="btn btn-primary" value="Save" [disabled] = "!form.valid || processed"> 
+    </div>  
+</form>
+  

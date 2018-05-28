@@ -1,0 +1,36 @@
+{
+  "name": "post",
+  "version": "1.0.0",
+  "description": "mean stack app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhonemillan/AngularTutorial2.git"
+  },
+  "keywords": [
+    "mean",
+    "stack",
+    "angular",
+    "4",
+    "application",
+    "mongo"
+  ],
+  "author": "jhonemillan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhonemillan/AngularTutorial2/issues"
+  },
+  "homepage": "https://github.com/jhonemillan/AngularTutorial2#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.3",
+    "jsonwebtoken": "^7.4.2",
+    "mongoose": "^4.11.5"
+  }
+}

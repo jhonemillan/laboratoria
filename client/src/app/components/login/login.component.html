@@ -1,0 +1,29 @@
+<h2 class="page-header">Login</h2>
+
+<!-- Custom Success/Error Message -->
+ <div class="row show-hide-message">
+  <div [ngClass]="messageClass">
+    {{ message }}
+  </div>
+</div> 
+
+<form [formGroup]="form" (submit)="onLoginSubmit()">
+    <!-- Username Field -->
+  <div class="form-group">
+    <label for="username">Username</label>
+    <div>
+      <input class="form-control" type="text" name="username" formControlName="username" />
+    </div>
+  </div>
+
+  <!-- Password Field  -->
+  <div class="form-group">
+    <label for="password">Password</label>
+    <div>
+      <input class="form-control" type="password" name="password" formControlName="password" />      
+    </div>
+  </div>
+
+  <!-- Submit Button -->
+  <input [disabled]="!form.valid || processed" class="btn btn-primary" type="submit" value="Login" />
+</form>

@@ -4,7 +4,7 @@ This app, is built in MEAN Stack and not in MERN stack.
 For Frontend was used: Angular 4, Bootstrap 3.7, Typescript
 For Backend: Node.js, JWT, Mongo, mLab as DB service, and another services to get images
 
-Is completely functional, in Heroku server, but i used a link available pur chased before for a personal incoming project that i am developing in my freetime.
+Is completely functional, in Heroku server, but i used a link available purchased before (i purchased this domain in godaddy) for a personal incoming project that i am developing in my freetime.
 
 to access to online site please visit www.reportauncrimen.org
 
